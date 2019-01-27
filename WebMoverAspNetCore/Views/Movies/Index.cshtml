@@ -1,0 +1,32 @@
+﻿@model WebMoverAspNetCore.Models.MovieListViewModel
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<h2>Movies</h2>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+@TempData["Notification"]
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Movies.OrderBy(m => m.Title))
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @Html.ActionLink("Archive", "Archive", new { id = item.Id }) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
