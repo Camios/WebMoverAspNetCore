@@ -44,7 +44,6 @@ namespace WebMoverAspNetCore
             services.AddScoped<MediaLibrary>();
             services.AddScoped<Movies>();
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
